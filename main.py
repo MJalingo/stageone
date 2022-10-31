@@ -14,4 +14,3 @@ student = {
 @app.get("/")
 def index():
     return  { "slackUsername": "mohammed jalingo nuruddeen", "backend": True, "age": 60, "bio":"python backend developer" }
-    
