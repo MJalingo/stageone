@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from typing import Optional
+# from typing import operation_typetional
 from pydantic import BaseModel
 
 
 class Item(BaseModel):
-    op: str
+    operation_type: str
     x: int
     y: int
 
@@ -17,13 +17,13 @@ def index():
 @app.post('/items/')
 async def do_operation(res: Item):
     res_dict = {}
-    if res.op == "addition":
+    if res.operation_type == "addition":
         result = res.x + res.y
-        res_dict.update({"result": result})
-    elif res.op == "subtraction":
+        res_dict.update({"slackUsername": "mohammed jalingo nuruddeen","result": result,'operation_type':res.operation_type})
+    elif res.operation_type == "subtraction":
         result = res.x - res.y
-        res_dict.update({"result": result})
-    elif res.op == "multiplication":
+        res_dict.update({"slackUsername": "mohammed jalingo nuruddeen","result": result,'operation_type':res.operation_type})
+    elif res.operation_type == "multiplication":
         result = res.x * res.y
-        res_dict.update({"result": result})
+        res_dict.update({"slackUsername": "mohammed jalingo nuruddeen","result": result,'operation_type':res.operation_type})
     return res_dict
